@@ -1,0 +1,9 @@
+{
+  "name": "passrength",
+  "license": "MIT",
+  "private": "true",
+  "workspaces": [
+    "packages/**"
+  ],
+  "devDependencies": {}
+}
