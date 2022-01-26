@@ -1,4 +1,8 @@
-import { RuleGeneratorReturn, RuleResultStatus, RuleResultFailInfo } from '@passtrength/core'
+import {
+  RuleGeneratorReturn,
+  RuleResultFailInfo,
+  RuleResultStatus,
+} from '@passtrength/core'
 
 export enum RuleUpperCaseFailCode {
   INSUFFICIENT_MATCHING_CHARS = 'INSUFFICIENT_MATCHING_CHARS',
@@ -17,10 +21,15 @@ type FailInfo = ResultFailInsufficientMatchingChars
 
 /**
  * Require the password to include _at least_ a certain amount of upper case characters.
- *
- * @param minUpperCaseChars Minimum amount of upper case characters that need to be in the password for the rule to pass
  */
-export function passRuleUpperCase(minUpperCaseChars: number = 1): RuleGeneratorReturn<FailInfo> {
+export function passRuleUpperCase(
+  /** 
+   * Minimum amount of upper case characters that need to be in the password for the rule to pass.
+   * 
+   * @default 1
+   */
+  minUpperCaseChars: number = 1
+): RuleGeneratorReturn<FailInfo> {
   const regex = new RegExp(`[A-Z]`, 'g')
 
   return (password) => {

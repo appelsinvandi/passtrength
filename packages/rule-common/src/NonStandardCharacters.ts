@@ -1,4 +1,8 @@
-import { RuleGeneratorReturn, RuleResultFailInfo, RuleResultStatus } from '@passtrength/core'
+import {
+  RuleGeneratorReturn,
+  RuleResultFailInfo,
+  RuleResultStatus,
+} from '@passtrength/core'
 
 export enum RuleNonStandardCharactersFailCode {
   INSUFFICIENT_MATCHING_CHARS = 'INSUFFICIENT_MATCHING_CHARS',
@@ -19,10 +23,15 @@ type FailInfo = ResultFailInsufficientMatchingChars
  * Require the password to include _at least_ a certain amount of non-standard character.
  *
  * A non-standard character is in this case defined as anything that isn't `a-z`, `A-Z`, or `0-9`.
- *
- * @param minNonStandardChars Minimum amount of non-standard characters that need to be in the password for the rule to pass
  */
-export function passRuleNonStandardCharacters(minNonStandardChars: number = 1): RuleGeneratorReturn<FailInfo> {
+export function passRuleNonStandardCharacters(
+  /** 
+   * Minimum amount of non-standard characters that need to be in the password for the rule to pass.
+   * 
+   * @default 1
+   */
+  minNonStandardChars: number = 1
+  ): RuleGeneratorReturn<FailInfo> {
   const regex = new RegExp(`[^A-Za-z0-9]`, 'g')
 
   return (password: string) => {

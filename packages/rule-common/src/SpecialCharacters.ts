@@ -1,4 +1,8 @@
-import { RuleGeneratorReturn, RuleResultFailInfo, RuleResultStatus } from '@passtrength/core'
+import {
+  RuleGeneratorReturn,
+  RuleResultFailInfo,
+  RuleResultStatus,
+} from '@passtrength/core'
 
 export enum RuleSpecialCharsFailCode {
   INSUFFICIENT_SPECIAL_CHARS = 'INSUFFICIENT_SPECIAL_CHARS',
@@ -17,17 +21,19 @@ type FailInfo = ResultFailInsufficientSpecialChars
 
 /**
  * Require the password to include _at least_ a certain amount of special characters.
- *
- * @param minSpecialChars Minimum amount of special characters that need to be in the password for the rule to pass.
- *
- * Default: `1`
- *
- * @param allowedChars A string containing all the characters considered special characters for the purpose of this rule.
- *
- * Default: ` !"#$%&'()*+,-./:;<=>?@[]^_{|}~`
  */
 export function passRuleSpecialCharacters(
+  /** 
+   * Minimum amount of special characters that need to be in the password for the rule to pass.
+   * 
+   * @default 1
+   */
   minSpecialChars: number = 1,
+  /** 
+   * A string containing all the characters considered special characters for the purpose of this rule.
+   * 
+   * @default ` !"#$%&'()*+,-./:;<=>?@[]^_{|}~`
+   */
   allowedChars: string = ' !"#$%&\'()*+,-./:;<=>?@[]^_{|}~'
 ): RuleGeneratorReturn<FailInfo> {
   // Escape only special characters - Avoids match sequences

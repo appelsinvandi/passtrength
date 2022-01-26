@@ -1,4 +1,8 @@
-import { RuleGeneratorReturn, RuleResultFailInfo, RuleResultStatus } from '@passtrength/core'
+import {
+  RuleGeneratorReturn,
+  RuleResultFailInfo,
+  RuleResultStatus,
+} from '@passtrength/core'
 
 export enum RuleNumbersFailCode {
   INSUFFICIENT_NUMBERS = 'INSUFFICIENT_NUMBERS',
@@ -17,10 +21,14 @@ type FailInfo = ResultFailInsufficientNumbers
 
 /**
  * Require the password to include _at least_ a certain amount of numbers.
- *
- * @param minNumbers Minimum amount of numbers that need to be in the password for the rule to pass
  */
-export function passRuleNumbers(minNumbers: number = 1): RuleGeneratorReturn<FailInfo> {
+export function passRuleNumbers(
+  /** 
+   * Minimum amount of numbers that need to be in the password for the rule to pass.
+   * 
+   * @default 1
+   */
+  minNumbers: number = 1): RuleGeneratorReturn<FailInfo> {
   const regex = new RegExp(`[0-9]`, 'g')
 
   return (password: string) => {
