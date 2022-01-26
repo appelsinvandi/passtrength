@@ -4,3 +4,6 @@ node_modules/
 # Editors
 .idea/
 .vscode/
+
+# Yarn 2
+.yarn/
