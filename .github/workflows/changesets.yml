@@ -10,7 +10,7 @@ env:
 
 jobs:
   version:
-    name: Changesets version
+    name: Changesets
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -31,7 +31,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install Dependencies
-        run: yarn
+        run: yarn install
 
       - name: Create Release Pull Request
         uses: changesets/action@v1
