@@ -1,5 +1,5 @@
 {
-  "name": "passrength",
+  "name": "passtrength",
   "license": "MIT",
   "workspaces": [
     "packages/*"
