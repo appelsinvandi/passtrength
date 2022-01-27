@@ -68,6 +68,8 @@ export function passRulePersonalInformation(
 
       if (e.type === PersonalInfoType.Text) {
         components.push(...extractAllComponents(e.value))
+      } else if (e.type === PersonalInfoType.Number) {
+        components.push(String(e.value))
       } else if (e.type === PersonalInfoType.Email) {
         let emailUsername = e.value.replace(/^(.*?)@.*$/, '$1')
 
@@ -93,6 +95,15 @@ export function passRulePersonalInformation(
           yearEnd + month + day,
           yearEnd + day + month
         )
+      } else if (e.type === PersonalInfoType.PhoneNumber) {
+        let cleanNumber = extractNumberComponents(e.value).join('')
+
+        // Split up the number into groups of 3 digits, as any below might easily cause a false positive
+        for (let i = 0; i < cleanNumber.length - 3; i++) {
+          components.push(cleanNumber.slice(i, i + 3))
+        }
+      } else if (e.type === PersonalInfoType.Username) {
+        components.push(...extractAllComponents(e.value))
       }
 
       return components.some((component) => password.toLowerCase().includes(component.toLowerCase()))

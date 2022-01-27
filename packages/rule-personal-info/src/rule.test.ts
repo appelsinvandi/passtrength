@@ -43,9 +43,8 @@ describe('Test with all supported personal info', () => {
   it(`should deny password: "605"`, () => testInsufficientMatchingCharsFail(rule('605'), [personalInfoPhone]))
   it(`should deny password: "7399"`, () => testInsufficientMatchingCharsFail(rule('7399'), [personalInfoPhone]))
   // Username
-  it(`should deny password: "sunshine"`, () => testInsufficientMatchingCharsFail(rule('sunshine'), [personalInfoPhone]))
-  // Multiple
-  it(`should deny password: "sunshine"`, () => testInsufficientMatchingCharsFail(rule('sunshine'), [personalInfoPhone]))
+  it(`should deny password: "sunshine"`, () =>
+    testInsufficientMatchingCharsFail(rule('sunshine'), [personalInfoUsername]))
 })
 
 function testInsufficientMatchingCharsFail(
