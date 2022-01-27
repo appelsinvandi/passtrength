@@ -38,7 +38,11 @@ describe('Password with at least one (1) special character, and a custom charact
   it('p@s&w_rd', () => expect(rule('p@s&w_rd').status).toBe(RuleResultStatus.PASS))
 })
 
-function testInsufficientSpecialCharsFail(ruleResult: HofReturnType<typeof passRuleSpecialCharacters>, expectedThreshold: number, expectedFound: number) {
+function testInsufficientSpecialCharsFail(
+  ruleResult: HofReturnType<typeof passRuleSpecialCharacters>,
+  expectedThreshold: number,
+  expectedFound: number
+) {
   expect(ruleResult.status).toBe(RuleResultStatus.FAIL)
   if (ruleResult.status !== RuleResultStatus.FAIL) return
 

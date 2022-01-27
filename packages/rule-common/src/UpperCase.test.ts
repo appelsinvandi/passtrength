@@ -29,7 +29,11 @@ describe('At least two (2) upper case character', () => {
   it(`should allow password: "PASSWORD"`, () => expect(rule('PASSWORD').status).toBe(RuleResultStatus.PASS))
 })
 
-function testInsufficientMatchingCharsFail(ruleResult: HofReturnType<typeof passRuleUpperCase>, expectedThreshold: number, expectedFound: number) {
+function testInsufficientMatchingCharsFail(
+  ruleResult: HofReturnType<typeof passRuleUpperCase>,
+  expectedThreshold: number,
+  expectedFound: number
+) {
   expect(ruleResult.status).toBe(RuleResultStatus.FAIL)
   if (ruleResult.status !== RuleResultStatus.FAIL) return
 

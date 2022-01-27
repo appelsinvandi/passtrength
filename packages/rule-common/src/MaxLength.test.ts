@@ -10,7 +10,11 @@ describe('Max password length: 8', () => {
   it('should deny 10 character password', () => testTooLongFail(rule('a'.repeat(10)), 8, 10))
 })
 
-function testTooLongFail(ruleResult: HofReturnType<typeof passRuleMaxLength>, expectedThreshold: number, expectedFound: number) {
+function testTooLongFail(
+  ruleResult: HofReturnType<typeof passRuleMaxLength>,
+  expectedThreshold: number,
+  expectedFound: number
+) {
   expect(ruleResult.status).toBe(RuleResultStatus.FAIL)
   if (ruleResult.status !== RuleResultStatus.FAIL) return
 

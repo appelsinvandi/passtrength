@@ -1,8 +1,4 @@
-import {
-  RuleGeneratorReturn,
-  RuleResultFailInfo,
-  RuleResultStatus,
-} from '@passtrength/core'
+import { RuleGeneratorReturn, RuleResultFailInfo, RuleResultStatus } from '@passtrength/core'
 
 export enum RuleMinLengthFailCode {
   TOO_SHORT = 'TOO_SHORT',

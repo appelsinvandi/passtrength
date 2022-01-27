@@ -29,7 +29,11 @@ describe('Password with at least two (2) non-standard', () => {
   it('should allow password: p@55wo_d', () => expect(rule('p@55wo_d').status).toBe(RuleResultStatus.PASS))
 })
 
-function testInsufficientMatchingCharsFail(ruleResult: HofReturnType<typeof passRuleNonStandardCharacters>, expectedThreshold: number, expectedFound: number) {
+function testInsufficientMatchingCharsFail(
+  ruleResult: HofReturnType<typeof passRuleNonStandardCharacters>,
+  expectedThreshold: number,
+  expectedFound: number
+) {
   expect(ruleResult.status).toBe(RuleResultStatus.FAIL)
   if (ruleResult.status !== RuleResultStatus.FAIL) return
 

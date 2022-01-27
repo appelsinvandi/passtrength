@@ -2,12 +2,7 @@ import { HofReturnType } from 'types/helpers'
 
 import { RuleResultStatus } from '@passtrength/core'
 
-import {
-  passRulePersonalInformation,
-  PersonalInfo,
-  PersonalInfoType,
-  RulePersonalInfoFailCode,
-} from './rule'
+import { passRulePersonalInformation, PersonalInfo, PersonalInfoType, RulePersonalInfoFailCode } from './rule'
 
 describe('Test with all supported personal info', () => {
   const personalInfoName: PersonalInfo = { type: PersonalInfoType.Text, value: 'Charlie Smith' }

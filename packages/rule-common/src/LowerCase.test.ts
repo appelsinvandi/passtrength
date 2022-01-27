@@ -29,7 +29,11 @@ describe('At least two (2) lower case character', () => {
   it(`should deny password: "PASSWORD"`, () => testInsufficientMatchingCharsFail(rule('PASSWORD'), 2, 0))
 })
 
-function testInsufficientMatchingCharsFail(ruleResult: HofReturnType<typeof passRuleLowerCase>, expectedThreshold: number, expectedFound: number) {
+function testInsufficientMatchingCharsFail(
+  ruleResult: HofReturnType<typeof passRuleLowerCase>,
+  expectedThreshold: number,
+  expectedFound: number
+) {
   expect(ruleResult.status).toBe(RuleResultStatus.FAIL)
   if (ruleResult.status !== RuleResultStatus.FAIL) return
 

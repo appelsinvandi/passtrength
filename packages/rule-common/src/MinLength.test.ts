@@ -10,7 +10,11 @@ describe('Min password length: 8', () => {
   it('should allow 10 character password', () => expect(rule('a'.repeat(10)).status).toBe(RuleResultStatus.PASS))
 })
 
-function testTooShortFail(ruleResult: HofReturnType<typeof passRuleMinLength>, expectedThreshold: number, expectedFound: number) {
+function testTooShortFail(
+  ruleResult: HofReturnType<typeof passRuleMinLength>,
+  expectedThreshold: number,
+  expectedFound: number
+) {
   expect(ruleResult.status).toBe(RuleResultStatus.FAIL)
   if (ruleResult.status !== RuleResultStatus.FAIL) return
 

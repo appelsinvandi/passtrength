@@ -1,8 +1,4 @@
-import {
-  RuleGeneratorReturn,
-  RuleResultFailInfo,
-  RuleResultStatus,
-} from '@passtrength/core'
+import { RuleGeneratorReturn, RuleResultFailInfo, RuleResultStatus } from '@passtrength/core'
 
 export enum RuleMaxLengthFailCode {
   TOO_LONG = 'TOO_LONG',

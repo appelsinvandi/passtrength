@@ -1,8 +1,4 @@
-import {
-  RuleGeneratorReturn,
-  RuleResultFailInfo,
-  RuleResultStatus,
-} from '@passtrength/core'
+import { RuleGeneratorReturn, RuleResultFailInfo, RuleResultStatus } from '@passtrength/core'
 
 export enum RulePersonalInfoFailCode {
   CONTAINS_PERSONAL_INFO = 'CONTAINS_PERSONAL_INFO',

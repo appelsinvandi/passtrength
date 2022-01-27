@@ -1,8 +1,4 @@
-import {
-  RuleGeneratorReturn,
-  RuleResultFailInfo,
-  RuleResultStatus,
-} from '@passtrength/core'
+import { RuleGeneratorReturn, RuleResultFailInfo, RuleResultStatus } from '@passtrength/core'
 
 export enum RuleSpecialCharsFailCode {
   INSUFFICIENT_SPECIAL_CHARS = 'INSUFFICIENT_SPECIAL_CHARS',

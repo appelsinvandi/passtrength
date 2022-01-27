@@ -29,7 +29,11 @@ describe('Password with at least two (2) number', () => {
   it('should allow password: "password123"', () => expect(rule('password123').status).toBe(RuleResultStatus.PASS))
 })
 
-function testInsufficientNumbersFail(ruleResult: HofReturnType<typeof passRuleNumbers>, expectedThreshold: number, expectedFound: number) {
+function testInsufficientNumbersFail(
+  ruleResult: HofReturnType<typeof passRuleNumbers>,
+  expectedThreshold: number,
+  expectedFound: number
+) {
   expect(ruleResult.status).toBe(RuleResultStatus.FAIL)
   if (ruleResult.status !== RuleResultStatus.FAIL) return
 
