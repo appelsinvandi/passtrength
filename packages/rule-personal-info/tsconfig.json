@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "lib": ["ES6"],
+    "module": "commonjs",
+    "target": "ES6",
+    "moduleResolution": "node",
+    "rootDir": ".",
+    "outDir": "./build",
+    "removeComments": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictPropertyInitialization": false,
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+    "baseUrl": "./src"
+  },
+  "exclude": ["node_modules"]
+}
