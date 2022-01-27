@@ -2307,7 +2307,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@passtrength/core@^1.0.0, @passtrength/core@workspace:packages/core":
+"@passtrength/core@workspace:packages/core, @passtrength/core@~0.0.1":
   version: 0.0.0-use.local
   resolution: "@passtrength/core@workspace:packages/core"
   dependencies:
@@ -2324,7 +2324,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@passtrength/rule-common@workspace:packages/rule-common"
   dependencies:
-    "@passtrength/core": ^1.0.0
+    "@passtrength/core": ~0.0.1
     "@types/jest": ^27
     jest: 27.4.7
     microbundle: 0.14.2
@@ -2332,7 +2332,20 @@ __metadata:
     ts-jest: 27.1.3
     typescript: 4.5.5
   peerDependencies:
-    "@passtrength/core": ^1.0.0
+    "@passtrength/core": ~0.0.1
+  languageName: unknown
+  linkType: soft
+
+"@passtrength/rule-discoverable-information@workspace:packages/rule-personal-info":
+  version: 0.0.0-use.local
+  resolution: "@passtrength/rule-discoverable-information@workspace:packages/rule-personal-info"
+  dependencies:
+    "@types/jest": ^27
+    jest: 27.4.7
+    microbundle: 0.14.2
+    rimraf: 3.0.2
+    ts-jest: 27.1.3
+    typescript: 4.5.5
   languageName: unknown
   linkType: soft
 
