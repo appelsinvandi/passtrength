@@ -23,9 +23,9 @@ type FailInfo = ResultFailInsufficientMatchingChars
  * Require the password to include _at least_ a certain amount of upper case characters.
  */
 export function passRuleUpperCase(
-  /** 
+  /**
    * Minimum amount of upper case characters that need to be in the password for the rule to pass.
-   * 
+   *
    * @default 1
    */
   minUpperCaseChars: number = 1

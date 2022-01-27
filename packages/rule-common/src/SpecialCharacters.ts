@@ -23,15 +23,15 @@ type FailInfo = ResultFailInsufficientSpecialChars
  * Require the password to include _at least_ a certain amount of special characters.
  */
 export function passRuleSpecialCharacters(
-  /** 
+  /**
    * Minimum amount of special characters that need to be in the password for the rule to pass.
-   * 
+   *
    * @default 1
    */
   minSpecialChars: number = 1,
-  /** 
+  /**
    * A string containing all the characters considered special characters for the purpose of this rule.
-   * 
+   *
    * @default ` !"#$%&'()*+,-./:;<=>?@[]^_{|}~`
    */
   allowedChars: string = ' !"#$%&\'()*+,-./:;<=>?@[]^_{|}~'

@@ -1,4 +1,8 @@
-import { RuleGeneratorReturn, RuleResultFailInfo, RuleResultStatus } from '@passtrength/core'
+import {
+  RuleGeneratorReturn,
+  RuleResultFailInfo,
+  RuleResultStatus,
+} from '@passtrength/core'
 
 export enum RuleMinLengthFailCode {
   TOO_SHORT = 'TOO_SHORT',
@@ -18,9 +22,21 @@ type FailInfo = ResultFailInfoTooShort
 /**
  * Require the password to be of _at least_ a certain length.
  *
- * @param minPasswordLength The minimum allowed length of the password
+ * ### Advice
+ *
+ * Logically increasing this number will make the password stronger.
+ * However, keep in mind that people have a hard time remembering long passwords,
+ * and so to mitigate this they might actually start using less secure passwords,
+ * ie. passwords vulnerable to
+ * [dictionary attacks](https://en.wikipedia.org/wiki/Dictionary_attack)
+ * like "1234567890", or "passwordpassword".
  */
-export function passRuleMinLength(minPasswordLength: number): RuleGeneratorReturn<FailInfo> {
+export function passRuleMinLength(
+  /**
+   * The minimum allowed number of characters in the password.
+   */
+  minPasswordLength: number
+): RuleGeneratorReturn<FailInfo> {
   return (password: string) => {
     if (password.length < minPasswordLength) {
       return {

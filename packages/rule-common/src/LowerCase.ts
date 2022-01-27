@@ -1,4 +1,8 @@
-import { RuleGeneratorReturn, RuleResultStatus, RuleResultFailInfo } from '@passtrength/core'
+import {
+  RuleGeneratorReturn,
+  RuleResultFailInfo,
+  RuleResultStatus,
+} from '@passtrength/core'
 
 export enum RuleLowerCaseFailCode {
   INSUFFICIENT_MATCHING_CHARS = 'INSUFFICIENT_MATCHING_CHARS',
@@ -17,10 +21,15 @@ type FailInfo = ResultFailInsufficientMatchingChars
 
 /**
  * Require the password to include _at least_ a certain amount of lower case characters.
- *
- * @param minLowerCaseChars Minimum amount of lower case characters that need to be in the password for the rule to pass
  */
-export function passRuleLowerCase(minLowerCaseChars: number = 1): RuleGeneratorReturn<FailInfo> {
+export function passRuleLowerCase(
+  /**
+   * Minimum amount of lower case characters that need to be in the password for the rule to pass.
+   *
+   * @default 1
+   */
+  minLowerCaseChars: number = 1
+): RuleGeneratorReturn<FailInfo> {
   const regex = new RegExp(`[a-z]`, 'g')
 
   return (password) => {

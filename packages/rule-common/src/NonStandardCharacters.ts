@@ -25,13 +25,13 @@ type FailInfo = ResultFailInsufficientMatchingChars
  * A non-standard character is in this case defined as anything that isn't `a-z`, `A-Z`, or `0-9`.
  */
 export function passRuleNonStandardCharacters(
-  /** 
+  /**
    * Minimum amount of non-standard characters that need to be in the password for the rule to pass.
-   * 
+   *
    * @default 1
    */
   minNonStandardChars: number = 1
-  ): RuleGeneratorReturn<FailInfo> {
+): RuleGeneratorReturn<FailInfo> {
   const regex = new RegExp(`[^A-Za-z0-9]`, 'g')
 
   return (password: string) => {

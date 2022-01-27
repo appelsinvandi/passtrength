@@ -1,4 +1,8 @@
-import { RuleGeneratorReturn, RuleResultFailInfo, RuleResultStatus } from '@passtrength/core'
+import {
+  RuleGeneratorReturn,
+  RuleResultFailInfo,
+  RuleResultStatus,
+} from '@passtrength/core'
 
 export enum RuleMaxLengthFailCode {
   TOO_LONG = 'TOO_LONG',
@@ -17,10 +21,13 @@ type FailInfo = ResultFailInfoTooLong
 
 /**
  * Require the password to be of _at most_ a certain length.
- *
- * @param maxPasswordLength The maximum allowed length of the password
  */
-export function passRuleMaxLength(maxPasswordLength: number): RuleGeneratorReturn<FailInfo> {
+export function passRuleMaxLength(
+  /**
+   * The maximum allowed length of the password.
+   */
+  maxPasswordLength: number
+): RuleGeneratorReturn<FailInfo> {
   return (password: string) => {
     if (password.length > maxPasswordLength) {
       return {
